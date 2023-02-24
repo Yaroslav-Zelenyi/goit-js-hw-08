@@ -23,12 +23,8 @@ function handleFormSubmit(event) {
 
 const localForm = localStorage.getItem('feedback-form-state');
 if (localForm) {
-  try {
-    formData = JSON.parse(localForm);
-  } catch (error) {
-    console.log(error.name);
-    console.log(error.message);
-  }
+  formData = JSON.parse(localForm);
+
   emailInput.value = formData.email || '';
   messageInput.value = formData.message || '';
 }
